@@ -1,21 +1,25 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import ProductsView from '../views/ProductsView.vue'
-import UserView from '../views/UserView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Task1 from "@/views/Task-1.vue";
+import Task2 from "@/views/Task-2.vue";
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  mode: "history",
+  base: import.meta.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'products',
-      component: ProductsView
+      path: "/",
+      name: "task1",
+      component: Task1,
     },
     {
-      path: '/user',
-      name: 'user',
-      component: UserView
-    }
-  ]
-})
+      path: "/task-2",
+      name: "task2",
+      component: Task2,
+    },
+  ],
+});
 
-export default router
+export default router;
